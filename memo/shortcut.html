@@ -1,0 +1,544 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Vim shortcut</title>
+        <link rel="stylesheet" href="../css/basic.css">
+    </head>
+
+    <h1>Vim command</h1>
+
+    <div id="body">
+        <p>
+            This page is intended to be a manual for quickly finding commands, and a learning note for myself.<br />
+            Just remember them and prictice them when you are coding.<br />
+            Prictice makes perfect.<br />
+        </p>
+
+        <h2>Mode Exchange</h2>
+        <p>There are four modes in Vim and VScode-vim:</p>
+        <ol>
+            <li>normal mode</li>
+            <li>insert mode</li>
+            <li>view mode</li>
+            <li>command mode</li>
+            <li>replace mode</li>
+        </ol>
+        <table>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Key</th>
+            </tr>
+            <tr>
+                <td>normal</td>
+                <td>insert</td>
+                <td>i, a, I, A...(many keys)</td>
+            </tr>
+            <tr>
+                <td>normal</td>
+                <td>command</td>
+                <td>:</td>
+            </tr>
+            <tr>
+                <td>normal</td>
+                <td>view</td>
+                <td>v, V</td>
+            </tr>
+            <tr>
+                <td>normal</td>
+                <td>replace</td>
+                <td>R</td>
+            </tr>
+            <tr>
+                <td>view, command, insert</td>
+                <td>normal</td>
+                <td>ESC</td>
+            </tr>
+        </table>
+        <p>When using some editing instructions, it will also cause mode conversion.</p>
+
+        <h2>Move Cursor</h2>
+        <p>Vim has fast ways to move cursor without mouse.</p>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Result</th>
+                <th>Move Unit</th>
+            </tr>
+            <tr>
+                <td>h</td>
+                <td>move left by one character</td>
+                <td>character</td>
+            </tr>
+            <tr>
+                <td>l</td>
+                <td>move right by one character</td>
+                <td>character</td>
+            </tr>
+            <tr>
+                <td>j</td>
+                <td>jump to the line below</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>k</td>
+                <td>climb to the line above</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>w</td>
+                <td>jump to the beginning place of next word</td>
+                <td>word</td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td>jump to the beginning place of last word</td>
+                <td>word</td>
+            </tr>
+            <tr>
+                <td>e</td>
+                <td>jump to the place where the next word ends</td>
+                <td>word</td>
+            </tr>
+            <tr>
+                <td>ge</td>
+                <td>jump to the place where the last word ends</td>
+                <td>word</td>
+            </tr>
+            <tr>
+                <td>W</td>
+                <td>jump to the beginning of the next section separated by space</td>
+                <td>part without spaces</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>jump to the beginning of the privious section separated by space</td>
+                <td>part without spaces</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>jump to the end of the next section separated by space</td>
+                <td>part without spaces</td>
+            </tr>
+            <tr>
+                <td>GE</td>
+                <td>jump to the end of the privious section separated by space</td>
+                <td>part without spaces</td>
+            </tr>
+            <tr>
+                <td><code style="color: orangered;">number(0)</code>$</td>
+                <td>jump to the last character of the next <code style="color: orangered;">number</code> line</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>^</td>
+                <td>jump to the first character that is not a space of current line</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>jump to the beginning of current line</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>jump to the last line of text</td>
+                <td>full text</td>
+            </tr>
+            <tr>
+                <td>gg</td>
+                <td>jump to the first line of text</td>
+                <td>full text</td>
+            </tr>
+            <tr>
+                <td><code style="color: orangered;">number</code>G</td>
+                <td>jump to the line whose line number is <code style="color: orangered;">number</code></td>
+                <td>full text</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>jump between left and right brackets</td>
+                <td>left and right brackets</td>
+            </tr>
+            <tr>
+                <td>f<code style="color: orangered;">char</code></td>
+                <td>jump to the next occurrence of <code style="color: orangered;">char</code> in current line</td>
+                <td>occurrence of <code style="color: orangered;">char</code> in current line</td>
+            </tr>
+            <tr>
+                <td>F<code style="color: orangered;">char</code></td>
+                <td>jump to the last occurrence of <code style="color: orangered;">char</code> in current line</td>
+                <td>occurrence of <code style="color: orangered;">char</code> in current line</td>
+            </tr>
+            <tr>
+                <td><code style="color: orangered;">number</code>%</td>
+                <td>jump to the <code style="color: orangered;">number</code> percent of the full text</td>
+                <td>full text</td>
+            </tr>
+            <tr>
+                <td>H</td>
+                <td>jump to the top line of current screen</td>
+                <td>screen</td>
+            </tr>
+            <tr>
+                <td>L</td>
+                <td>jump to the last line of current screen</td>
+                <td>screen</td>
+            </tr>
+            <tr>
+                <td>M</td>
+                <td>jump to the middle line of current screen</td>
+                <td>screen</td>
+            </tr>
+            <tr>
+                <td>Ctrl+u</td>
+                <td>move half screen up</td>
+                <td>screen</td>
+            </tr>
+            <tr>
+                <td>Ctrl+d</td>
+                <td>move half screen down</td>
+                <td>screen</td>
+            </tr>
+            <tr>
+                <td>Ctrl+e</td>
+                <td>move one line down</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>Ctrl+y</td>
+                <td>move one line up</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>Ctrl+f</td>
+                <td>move entire screen down</td>
+                <td>screen</td>
+            </tr>
+            <tr>
+                <td>Ctrl+b</td>
+                <td>move entire screen up</td>
+                <td>screen</td>
+            </tr>
+            <tr>
+                <td>zz</td>
+                <td>move the current line to the middle of the screen</td>
+                <td>screen</td>
+            </tr>
+            <tr>
+                <td>zt</td>
+                <td>move the current line to the top of the screen</td>
+                <td>screen</td>
+            </tr>
+            <tr>
+                <td>zb</td>
+                <td>move the current line to the bottom of the screen</td>
+                <td>screen</td>
+            </tr>
+            <tr>
+                <td><code style="color: orangered;">Ctrl+w</code>+w</td>
+                <td>move between windows</td>
+                <td>windows</td>
+            </tr>
+            <tr>
+                <td><code style="color: orangered;">Ctrl+w</code>+h</td>
+                <td>move to the left window</td>
+                <td>windows</td>
+            </tr>
+            <tr>
+                <td><code style="color: orangered;">Ctrl+w</code>+l</td>
+                <td>move to the right window</td>
+                <td>windows</td>
+            </tr>
+            <tr>
+                <td><code style="color: orangered;">Ctrl+w</code>+j</td>
+                <td>move to the window below</td>
+                <td>windows</td>
+            </tr>
+            <tr>
+                <td><code style="color: orangered;">Ctrl+w</code>+k</td>
+                <td>move to the window above</td>
+                <td>windows</td>
+            </tr>
+            <tr>
+                <td>`.</td>
+                <td>last modified position</td>
+                <td>full text</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>grab the word from under the cursor and search for the next one</td>
+                <td>full text</td>
+            </tr>
+            <tr>
+                <td>#</td>
+                <td>grab the word from under the cursor and search for the privious one</td>
+                <td>full text</td>
+            </tr>
+            <tr>
+                <td>gd</td>
+                <td>jump from the use of a variable to its local declaration</td>
+                <td>full text</td>
+            </tr>
+            <tr>
+                <td>[{</td>
+                <td>jump back to the "{" at the start of the current code block</td>
+                <td>code block</td>
+            </tr>
+            <tr>
+                <td>]}</td>
+                <td>jump back to the "}" at the end of the current code block</td>
+                <td>code block</td>
+            </tr>
+            <tr>
+                <td><code style="color: mediumblue;">mark:</code>m<code style="color: orangered;">char</code><br /><code style="color:mediumblue">return:</code>`<code style="color: orangered;">char</code></td>
+                <td>set a mark at current cursor position, and jump to the mark</td>
+                <td>full text</td>
+            </tr>
+        </table>
+
+        <h2>Modify</h2>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Result</th>
+                <th>Modify unit</th>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>delete the character under the current cursor</td>
+                <td>character</td>
+            </tr>
+            <tr>
+                <td>X</td>
+                <td>delete the character before the current cursor</td>
+                <td>character</td>
+            </tr>
+            <tr>
+                <td>dd</td>
+                <td>delete current line</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>s</td>
+                <td>delete the character under the current cursor, change to insert mode</td>
+                <td>character</td>
+            </tr>
+            <tr>
+                <td>u</td>
+                <td>undo last modification command</td>
+                <td>command</td>
+            </tr>
+            <tr>
+                <td>Ctrl+r</td>
+                <td>undo last undo</td>
+                <td>command</td>
+            </tr>
+            <tr>
+                <td>de</td>
+                <td>delete the content from the current cursor to the end of current word</td>
+                <td>word</td>
+            </tr>
+            <tr>
+                <td>p</td>
+                <td>paste copied content behind the current cursor</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>paster copied content before the current cursor</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>y</td>
+                <td>copy selected content under view mode</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>yy</td>
+                <td>copy the current line</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>Y</td>
+                <td>copy the current line</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>yaw</td>
+                <td>copy the current word</td>
+                <td>word</td>
+            </tr>
+            <tr>
+                <td>daw</td>
+                <td>delete the current word</td>
+                <td>word</td>
+            </tr>
+            <tr>
+                <td>ye</td>
+                <td>copy the content from the current cursor to the end of current word</td>
+                <td>word</td>
+            </tr>
+            <tr>
+                <td>o</td>
+                <td>insert a new line below the current line and switch to insert mode</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>O</td>
+                <td>insert a new line above the current line and switch to insert mode</td>
+                <td>line</td>
+            </tr>
+            <tr>
+                <td>cw</td>
+                <td>change the current word</td>
+                <td>word</td>
+            </tr>
+            <tr>
+                <td>.</td>
+                <td>repeat the last change at the current cursor position</td>
+                <td>command</td>
+            </tr>
+            <tr>
+                <td><code style="color:mediumblue">record start:</code></code>q<code style="color: orangered;">char</code><br /><code style="color: mediumblue;">record end:</code>q<br /><code style="color: mediumblue;">repeat:</code>@<code style="color:orangered">char</code></td>
+                <td>record commands into a register with name <code style="color: orangered;">char</code>, and repeat it</td>
+                <td>command</td>
+            </tr>
+            <tr>
+                <td>r<code style="color:orangered">char</code></td>
+                <td>replace the character under the cursor with <code style="color: orangered;">char</code></td>
+                <td>character</td>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>replace characters with characters to be typed without switch to insert mode</td>
+                <td>character</td>
+            </tr>
+        </table>
+
+        <h2>Search</h2>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Result</th>
+                <th>Search Order</th>
+            </tr>
+            <tr>
+                <td>/<code style="color: orangered;">target</code></td>
+                <td>search <code style="color: orangered;">target</code> in this file</td>
+                <td>beginning to ending</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>grab the word from under the cursor and search for the next one</td>
+                <td>beginning to ending</td>
+            </tr>
+            <tr>
+                <td>#</td>
+                <td>grab the word from under the cursor and search for the privious one</td>
+                <td>ending to beginning</td>
+            </tr>
+            <tr>
+                <td>n</td>
+                <td>move to the next search result</td>
+                <td>same to the search command</td>
+            </tr>
+            <tr>
+                <td>N</td>
+                <td>move to the last search result</td>
+                <td>opposite to the search command</td>
+            </tr>
+        </table>
+
+        <h2>Command</h2>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td>:wq</td>
+                <td>write and quit</td>
+            </tr>
+            <tr>
+                <td>:q</td>
+                <td>only quit</td>
+            </tr>
+            <tr>
+                <td>:q!</td>
+                <td>reset all changes and quit</td>
+            </tr>
+            <tr>
+                <td>:w</td>
+                <td>write</td>
+            </tr>
+            <tr>
+                <td>ZZ</td>
+                <td>write and quit</td>
+            </tr>
+            <tr>
+                <td>:set number<br /><code style="color: orangered;">or</code><br />:set nonumber</td>
+                <td>whether set line number</td>
+            </tr>
+            <tr>
+                <td>:set ignorecase<br /><code style="color: orangered;">or</code><br />:set noignorecase</td>
+                <td>whether distinguish uppercase and lowercase when searching</td>
+            </tr>
+            <tr>
+                <td>:set hlsearch<br /><code style="color: orangered;">or</code><br />:set nohlsearch</td>
+                <td>whether highlight all matching results when searching</td>
+            </tr>
+            <tr>
+                <td>:set incsearch<br /><code style="color: orangered;">or</code><br />:set noincsearch</td>
+                <td>whether highlight current matching result in a difference way</td>
+            </tr>
+            <tr>
+                <td>:set wrapscan<br /><code style="color: orangered;">or</code><br />:set wrapscan</td>
+                <td>whether to loop through among the search results</td>
+            </tr>
+            <tr>
+                <td>:edit <code style="color: orangered;">filepath</code></td>
+                <td>open the file with path: <code style="color: orangered;">filepath</code></td>
+            </tr>
+            <tr>
+                <td>:split</td>
+                <td>open another window horizontally</td>
+            </tr>
+            <tr>
+                <td>:vsplit</td>
+                <td>open another window vertically</td>
+            </tr>
+            <tr>
+                <td>:only</td>
+                <td>write and quit other opened files</td>
+            </tr>
+            <tr>
+                <td>:qall</td>
+                <td>quit all opened files</td>
+            </tr>
+            <tr>
+                <td>:wqall</td>
+                <td>write and quit all opened files</td>
+            </tr>
+        </table>
+
+        <h2>Others</h2>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td>Ctrl+g</td>
+                <td>check the current file and current cursor position</td>
+            </tr>
+        </table>
+
+        <h2>Reference</h2>
+        <ol>
+            <li><a href="https://www.vim.org/docs.php" style="color: blue">vim doc</a></li>
+            <li><a href="https://yianwillis.github.io/vimcdoc/doc/help.html" style="color: blue">vim doc - CN</a></li>
+            <li><a href="https://www.moolenaar.net/habits.html" style="color:blue">Seven habits of effective text editing</a></li>
+        </ol>
+    </div>
+</html>
