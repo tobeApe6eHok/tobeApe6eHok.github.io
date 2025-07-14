@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>public memo</title>
+        <link rel="stylesheet" href="../css/basic.css">
+    </head>
+
+    <body>
+        <h1>public memo</h1>
+        <div id="body">
+            <p>
+                Used to record some commonly used scripts.
+            </p>
+
+<pre><code>
+function setproxy() {
+    export all_proxy=http://10.129.208.110:7890/
+    export ALL_PROXY=$all_proxy
+    export http_proxy=$all_proxy
+    export https_proxy=$all_proxy
+    export HTTP_PROXY=$all_proxy
+    export HTTPS_PROXY=$all_proxy
+}
+function unsetproxy() {
+    unset http_proxy
+    unset https_proxy
+    unset HTTP_PROXY
+    unset HTTPS_PROXY
+    unset all_proxy
+    unset ALL_PROXY
+}
+export no_proxy=localhost,127.0.0.1
+setproxy</code></pre>
+
+
+
+        </div>
+    </body>
+</html>
