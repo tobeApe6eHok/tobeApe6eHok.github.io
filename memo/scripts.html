@@ -13,24 +13,8 @@
             </p>
 
 <pre><code>
-function setproxy() {
-    export all_proxy=http://your_ip:your_port/
-    export ALL_PROXY=$all_proxy
-    export http_proxy=$all_proxy
-    export https_proxy=$all_proxy
-    export HTTP_PROXY=$all_proxy
-    export HTTPS_PROXY=$all_proxy
-}
-function unsetproxy() {
-    unset http_proxy
-    unset https_proxy
-    unset HTTP_PROXY
-    unset HTTPS_PROXY
-    unset all_proxy
-    unset ALL_PROXY
-}
-export no_proxy=localhost,127.0.0.1
-setproxy</code></pre>
+export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897
+</code></pre>
 
 
 
